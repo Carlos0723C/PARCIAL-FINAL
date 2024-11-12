@@ -1,112 +1,117 @@
-import { Search, MapPin, User, CreditCard, Package, ShoppingCart, Menu } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-
-export default function Component() {
-  return (
-    <div className="min-h-screen bg-[#FFE600]">
-      {/* Header */}
-      <header className="w-full bg-[#FFE600] border-b border-[#00000015] py-2">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center gap-4">
-            <div className="flex-shrink-0">
-              <h1 className="text-2xl font-bold">Sleep Care</h1>
-            </div>
-            <div className="flex-grow max-w-2xl">
-              <div className="relative">
-                <Input
-                  type="search"
-                  placeholder="Buscar productos para apnea del sueño..."
-                  className="w-full bg-white pl-4 pr-10 py-2 rounded-md shadow-sm"
-                />
-                <Search className="absolute right-3 top-2.5 text-gray-400 h-5 w-5" />
-              </div>
-            </div>
-            <div className="hidden md:flex items-center gap-6 text-sm">
-              <Button variant="link" className="text-[#3483FA]">
-                Crea tu cuenta
-              </Button>
-              <Button variant="link" className="text-[#3483FA]">
-                Ingresa
-              </Button>
-              <Button variant="link" className="text-[#3483FA]">
-                Mis compras
-              </Button>
-              <Button variant="ghost" size="icon">
-                <ShoppingCart className="h-5 w-5" />
-              </Button>
-            </div>
-            <Button variant="ghost" size="icon" className="md:hidden">
-              <Menu className="h-5 w-5" />
-            </Button>
-          </div>
-        </div>
-      </header>
-
-      {/* Navigation */}
-      <nav className="bg-[#FFE600] py-2">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center gap-6">
-            <Button variant="ghost" className="text-gray-600">
-              <MapPin className="h-4 w-4 mr-2" />
-              Ingresa tu ubicación
-            </Button>
-            <div className="hidden md:flex items-center gap-4">
-              <Button variant="ghost">Categorías</Button>
-              <Button variant="ghost">Ofertas</Button>
-              <Button variant="ghost">Productos Destacados</Button>
-              <Button variant="ghost">Ayuda</Button>
-            </div>
-          </div>
-        </div>
-      </nav>
-
-      {/* Main Banner */}
-      <div className="bg-[#FFE600] py-8">
-        <div className="container mx-auto px-4">
-          <div className="bg-[#FFE600] rounded-lg p-6 text-center relative overflow-hidden">
-            <div className="relative z-10">
-              <span className="bg-[#3483FA] text-white px-4 py-1 rounded-full text-sm">NUEVO BENEFICIO</span>
-              <h2 className="text-4xl font-bold mt-4 mb-2">TUS COMPRAS CON</h2>
-              <div className="text-5xl font-black mb-4">0% INTERÉS EN 3 CUOTAS</div>
-              <p className="text-lg">CON TARJETAS DE CRÉDITO DE BANCOS ALIADOS</p>
-            </div>
-            <div className="absolute right-0 top-0 h-full w-1/3">
-              <div className="relative h-full">
-                <div className="absolute right-0 top-1/2 -translate-y-1/2">
-                  <div className="text-[#3483FA] text-[200px] font-black">0</div>
-                  <div className="text-[#3483FA] text-[100px] font-black absolute top-0 right-[-20px]">%</div>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleep Care - Productos para Apnea del Sueño</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>Sleep Care</h1>
                 </div>
-              </div>
+                <div class="search-bar">
+                    <input type="search" placeholder="Buscar productos para apnea del sueño...">
+                    <button class="search-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                    </button>
+                </div>
+                <nav class="header-nav">
+                    <button>Crea tu cuenta</button>
+                    <button>Mis compras</button>
+                    <button class="cart-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+                        <span class="cart-count">0</span>
+                    </button>
+                </nav>
             </div>
-          </div>
         </div>
-      </div>
+    </header>
 
-      {/* Quick Access Icons */}
-      <div className="bg-white py-8">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-            {[
-              { icon: Package, text: "Visto recientemente" },
-              { icon: MapPin, text: "Ingresa tu ubicación" },
-              { icon: User, text: "Ingresa a tu cuenta" },
-              { icon: CreditCard, text: "Medios de pago" },
-              { icon: Package, text: "Menos de $40.000" },
-              { icon: Package, text: "Más vendidos" },
-            ].map((item, index) => (
-              <Button
-                key={index}
-                variant="outline"
-                className="flex flex-col items-center justify-center h-32 bg-white hover:bg-gray-50"
-              >
-                <item.icon className="h-8 w-8 mb-2 text-[#3483FA]" />
-                <span className="text-sm text-center">{item.text}</span>
-              </Button>
-            ))}
-          </div>
+    <nav class="main-nav">
+        <div class="container">
+            <button>Categorías</button>
+            <button>Ofertas</button>
+            <button>Productos Destacados</button>
+            <button>Ayuda</button>
         </div>
-      </div>
-    </div>
-  )
-}
+    </nav>
+
+    <main>
+        <section class="banner">
+            <div class="container">
+                <div class="banner-content">
+                    <span class="badge">NUEVO BENEFICIO</span>
+                    <h2>CUIDA TU SUEÑO</h2>
+                    <div class="discount">HASTA 30% DE DESCUENTO</div>
+                    <p>EN PRODUCTOS SELECCIONADOS PARA APNEA DEL SUEÑO</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="quick-access">
+            <div class="container">
+                <div class="grid">
+                    <div class="card">
+                        <h3>Visto recientemente</h3>
+                        <div class="product-grid">
+                            <!-- Productos vistos recientemente se insertarán aquí dinámicamente -->
+                        </div>
+                        <button class="outline-button">Ver historial completo</button>
+                    </div>
+                    <div class="card">
+                        <h3>Medios de pago</h3>
+                        <div class="payment-methods">
+                            <div class="payment-method">
+                                <img src="/placeholder.svg?height=40&width=40" alt="Visa">
+                                <span>Visa</span>
+                            </div>
+                            <div class="payment-method">
+                                <img src="/placeholder.svg?height=40&width=40" alt="MasterCard">
+                                <span>MasterCard</span>
+                            </div>
+                            <div class="payment-method">
+                                <img src="/placeholder.svg?height=40&width=40" alt="PayPal">
+                                <span>PayPal</span>
+                            </div>
+                            <div class="payment-method">
+                                <img src="/placeholder.svg?height=40&width=40" alt="Transferencia">
+                                <span>Transferencia</span>
+                            </div>
+                        </div>
+                        <button class="outline-button">Ver todos los medios de pago</button>
+                    </div>
+                    <div class="card">
+                        <h3>Menos de $100</h3>
+                        <div class="product-grid">
+                            <!-- Productos menos de $100 se insertarán aquí dinámicamente -->
+                        </div>
+                        <button class="outline-button">Ver todos los productos</button>
+                    </div>
+                    <div class="card">
+                        <h3>Favoritos</h3>
+                        <div class="product-grid">
+                            <!-- Productos favoritos se insertarán aquí dinámicamente -->
+                        </div>
+                        <button class="outline-button">Ver todos los favoritos</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="categories">
+            <div class="container">
+                <h2>Categorías de Productos</h2>
+                <div class="category-grid">
+                    <!-- Las categorías se insertarán aquí dinámicamente -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
