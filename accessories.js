@@ -122,6 +122,34 @@ document.addEventListener('DOMContentLoaded', function() {
             cartDisplay.textContent = cartCount;
         }
     }
+    function showPurchaseConfirmationToast() {
+        const toastContainer = document.createElement('div');
+        toastContainer.className = 'position-fixed bottom-0 end-0 p-3';
+        toastContainer.style.zIndex = '11';
+        toastContainer.innerHTML = `
+            <div id="purchaseToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <strong class="me-auto">Compra realizada</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body">
+                    ¡Tu compra se ha realizado con éxito!
+                </div>
+            </div>
+        `;
+        document.body.appendChild(toastContainer);
+
+        const toast = new bootstrap.Toast(document.getElementById('purchaseToast'));
+        toast.show();
+
+        setTimeout(() => {
+            toastContainer.remove();
+        }, 3000);
+    }
+
+    document.getElementById('buyButton').addEventListener('click', function() {
+        showPurchaseConfirmationToast();
+    });
 
     function showAddToCartToast(productName) {
         const toastContainer = document.createElement('div');
