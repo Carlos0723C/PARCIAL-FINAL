@@ -1,41 +1,28 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const helpCards = document.querySelectorAll('.help-card');
-    const searchInput = document.querySelector('.search-section input');
-    const searchButton = document.querySelector('.search-section button');
-
-    // Añadir funcionalidad a las tarjetas de ayuda
-    helpCards.forEach(card => {
-        card.addEventListener('click', function() {
-            const title = this.querySelector('h3').textContent;
-            alert(`Has seleccionado: ${title}. Aquí se mostraría más información sobre este tema.`);
-        });
-    });
-
-    // Funcionalidad de búsqueda
-    function performSearch() {
-        const searchTerm = searchInput.value.toLowerCase();
-        helpCards.forEach(card => {
-            const cardText = card.textContent.toLowerCase();
-            if (cardText.includes(searchTerm)) {
-                card.style.display = 'flex';
-            } else {
-                card.style.display = 'none';
-            }
+    const supportForm = document.getElementById('supportForm');
+    if (supportForm) {
+        supportForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const issue = document.getElementById('issue').value;
+            
+            // Aquí normalmente enviarías los datos a un servidor
+            console.log('Formulario enviado:', { name, email, issue });
+            
+            // Simulamos una respuesta exitosa
+            alert('Gracias por contactarnos. Nos pondremos en contacto contigo pronto.');
+            supportForm.reset();
         });
     }
 
-    searchButton.addEventListener('click', performSearch);
-    searchInput.addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') {
-            performSearch();
-        }
+    // Smooth scrolling para los enlaces de navegación
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
     });
-
-    // Actualizar el contador del carrito (ejemplo)
-    const cartCount = document.querySelector('.cart-count');
-    let count = 0;
-    setInterval(() => {
-        count = (count + 1) % 10;  // Simula cambios en el carrito
-        cartCount.textContent = count;
-    }, 5000);
 });
