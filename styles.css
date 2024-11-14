@@ -133,7 +133,6 @@ footer a:hover {
     }
 }
 
-
 .navbar-nav .nav-item {
     position: relative;
 }
@@ -161,4 +160,49 @@ footer a:hover {
 .dropdown-item:hover {
     background-color: var(--primary-color);
     color: var(--light-text-color);
+}
+
+
+.dropdown-menu {
+    min-width: 300px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+}
+
+.cart-item-details {
+    display: flex;
+    align-items: center;
+}
+
+.cart-item-image {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.cart-item-name {
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
+.cart-item-price {
+    font-size: 0.9em;
+    color: var(--secondary-color);
+}
+
+.cart-item-remove {
+    background: none;
+    border: none;
+    color: var(--danger-color);
+    cursor: pointer;
+}
+
+#cartTotal {
+    font-size: 1.1em;
 }
