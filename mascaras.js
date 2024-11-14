@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
     const products = [
-        { id: 1, name: "ResMed AirFit N30i", type: "nasal", price: 129.99, image: "/placeholder.svg?height=200&width=200" },
-        { id: 2, name: "Philips Respironics DreamWear", type: "nasal", price: 149.99, image: "/placeholder.svg?height=200&width=200" },
-        { id: 3, name: "Fisher & Paykel Vitera", type: "facial", price: 189.99, image: "/placeholder.svg?height=200&width=200" },
-        { id: 4, name: "ResMed AirFit P10", type: "nasal-pillow", price: 109.99, image: "/placeholder.svg?height=200&width=200" },
-        { id: 5, name: "Philips Respironics Amara View", type: "facial", price: 169.99, image: "/placeholder.svg?height=200&width=200" },
-        { id: 6, name: "Fisher & Paykel Brevida", type: "nasal-pillow", price: 119.99, image: "/placeholder.svg?height=200&width=200" }
+        { id: 1, name: "ResMed AirFit N30i", type: "nasal", price: 129.99, image: "img/resmed30i.jpg?height=200&width=200" },
+        { id: 2, name: "Philips Respironics DreamWear", type: "nasal", price: 149.99, image: "img/philips.jpg?height=200&width=200" },
+        { id: 3, name: "Fisher & Paykel Vitera", type: "facial", price: 189.99, image: "img/fisher.jpg?height=200&width=200" },
+        { id: 4, name: "ResMed AirFit P10", type: "nasal-pillow", price: 109.99, image: "img/resmedp10.jpg?height=200&width=200" },
+        { id: 5, name: "Philips Respironics Amara View", type: "facial", price: 169.99, image: "img/philipsamara.jpg?height=200&width=200" },
+        { id: 6, name: "Fisher & Paykel Brevida", type: "nasal-pillow", price: 119.99, image: "img/fisher_paykel.jpg?height=200&width=200" }
     ];
 
     const itemsPerPage = 6;
