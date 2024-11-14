@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
     const products = [
         { id: 13, name: "Almohada Cervical Anti-Apnea", category: "Almohadas", price: 79.99, image: "img/almohada_apnea.jpg?height=200&width=200" },
-        { id: 14, name: "Almohada para Cuello Ajustable", category: "Almohadas", price: 59.99, image: "/placeholder.svg?height=200&width=200" },
+        { id: 14, name: "Almohada para Cuello Ajustable", category: "Almohadas", price: 59.99, image: "img/almohada_ajustable.jpg?height=200&width=200" },
         { id: 15, name: "Humidificador ClimateControl", category: "Aromaterapia", price: 189.99, image: "img/humificador_integrado.jpg?height=200&width=200" },
-        { id: 16, name: "Cobertor de Cama Ultra Suave", category: "Cubiertas", price: 79.99, image: "/placeholder.svg?height=200&width=200" }
+        { id: 16, name: "Cobertor de Cama Ultra Suave", category: "Cubiertas", price: 79.99, image: "img/cobertor.jpg?height=200&width=200" }
     ];
     
 
