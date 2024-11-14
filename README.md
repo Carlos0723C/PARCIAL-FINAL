@@ -1,1 +1,1 @@
-https://carlos0723c.github.io/TABLA-FUTBOL/
+https://carlos0723c.github.io/PARCIAL-FINAL/
